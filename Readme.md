@@ -31,4 +31,9 @@ Please ensure that you are familiar with our values in the instructions project.
 * excellent testing that acts as documentation for the code
 * challenging boundaries where necessary
 
+## Romaric Comments
 
+I have removed the ITimeConverter interface to make the TimeConverter static.
+In my opinion, this helps indicating that the TimeConverter is stateless.
+In the case of a more complex problem with several different converters, it may be better to keep the interface.
+I try to use a more functional style of coding when it is possible.

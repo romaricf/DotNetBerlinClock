@@ -28,6 +28,28 @@ YYROOOOOOOO
 YYOO
 """
 
+Scenario: At 06:06:06
+When the time is "06:06:06"
+Then the clock should look like
+"""
+Y
+ROOO
+ROOO
+YOOOOOOOOOO
+YOOO
+"""
+
+Scenario: Full third line
+When the time is "04:00:01"
+Then the clock should look like
+"""
+O
+OOOO
+RRRR
+OOOOOOOOOOO
+OOOO
+"""
+
 Scenario: Just before midnight
 When the time is "23:59:59"
 Then the clock should look like
@@ -41,11 +63,8 @@ YYYY
 
 Scenario: Midnight 24:00
 When the time is "24:00:00"
-Then the clock should look like
-"""
-Y
-RRRR
-RRRR
-OOOOOOOOOOO
-OOOO
-"""
+Then there is a format error
+
+Scenario: Not at time
+When the time is "not a time"
+Then there is a format error
